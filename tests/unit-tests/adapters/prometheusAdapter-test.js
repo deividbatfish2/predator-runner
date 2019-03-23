@@ -8,7 +8,7 @@ const jobConfig = {
 };
 
 const metricsConfig = {
-    push_gateway_url: 'url',
+    prometheus_push_gateway_url: 'url',
 };
 
 const expectedPluginConfiguartion = {
@@ -30,7 +30,7 @@ describe('Influxdb adapter test', () => {
     });
 
     it('Should retrieve prometheus plugin configuration with bucket_sizes', () => {
-        metricsConfig.bucket_sizes = [0.5, 1, 5, 10, 100];
+        metricsConfig.prometheus_bucket_sizes = [0.5, 1, 5, 10, 100];
         const pluginConfiguration = prometheusAdapter.buildMetricsPlugin(metricsConfig, jobConfig);
         expectedPluginConfiguartion.prometheus.bucketSizes = [0.5, 1, 5, 10, 100];
         should(pluginConfiguration).eql(expectedPluginConfiguartion);

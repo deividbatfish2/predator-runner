@@ -143,8 +143,8 @@ module.exports.EXPECTED_ARTILLERY_CUSTOM_TEST = {
 };
 
 module.exports.PROMETHEUS_CONFIGURATION = {
-    push_gateway_url: 'http://pushgateway.com',
-    bucket_sizes: [0.5, 1, 2, 5, 10]
+    prometheus_push_gateway_url: 'http://pushgateway.com',
+    prometheus_bucket_sizes: [0.5, 1, 2, 5, 10]
 };
 
 module.exports.INFLUXDB_CONFIGURATION = {

@@ -1,7 +1,7 @@
 module.exports.buildMetricsPlugin = (metricsConfig, jobConfig) => {
     let prometheusPlugin = {
         'prometheus': {
-            'pushGatewayUrl': metricsConfig.push_gateway_url,
+            'pushGatewayUrl': metricsConfig.prometheus_push_gateway_url,
             'labels': {
                 'testName': jobConfig.testName,
                 'testRunId': jobConfig.runId,
@@ -10,8 +10,8 @@ module.exports.buildMetricsPlugin = (metricsConfig, jobConfig) => {
         }
     };
 
-    if (metricsConfig.bucket_sizes) {
-        prometheusPlugin.prometheus.bucketSizes = metricsConfig.bucket_sizes;
+    if (metricsConfig.prometheus_bucket_sizes) {
+        prometheusPlugin.prometheus.bucketSizes = metricsConfig.prometheus_bucket_sizes;
     }
 
     return prometheusPlugin;
